@@ -93,12 +93,12 @@ LTKLoggerUtil::LTKLoggerUtil(){}
 * Author			Date				Description of change
 ****************************************************************************/
 
-int LTKLoggerUtil::createLogger(const string& lipiLibPath)
+int LTKLoggerUtil::createLogger(const string& lipiRoot)
 {
     void* functionHandle = NULL; 
     auto_ptr<LTKOSUtil> a_ptrOSUtil(LTKOSUtilFactory::getInstance());
 
-    int iErrorCode = a_ptrOSUtil->loadSharedLib(lipiLibPath,
+    int iErrorCode = a_ptrOSUtil->loadSharedLib(lipiRoot,
                                                 LOGGER_MODULE_STR, 
                                                 &m_libHandleLogger);
 

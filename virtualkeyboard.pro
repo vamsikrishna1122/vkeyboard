@@ -7,7 +7,7 @@ include(doc/doc.pri)
 
 QT += qml quick gui gui-private core-private
 
-CONFIG += plugin lang-en_GB lang-zh_CN lang-ko_KR lang-ja_JP
+CONFIG += plugin lang-zh_CN
 win32 {
     CONFIG += no-pkg-config skip_target_version_ext
     VERSION = $$QT_VERSION
@@ -240,12 +240,12 @@ static {
         HEADERS += hunspellinputmethod.h hunspellinputmethod_p.h hunspellworker.h
         DEFINES += HAVE_HUNSPELL
         INCLUDEPATH += 3rdparty/hunspell/src
+        DEPENDPATH += 3rdparty/hunspell/src
         LIBS += -L$$OUT_PWD/3rdparty/hunspell/$$SUBPATH -lhunspell$$TARGET_SUFFIX
         exists(3rdparty/hunspell/data) {
             hunspell_data.files = 3rdparty/hunspell/data/*.dic 3rdparty/hunspell/data/*.aff
             hunspell_data.path = $$DATAPATH/hunspell
             INSTALLS += hunspell_data
-            !prefix_build: COPIES += hunspell_data
         } else {
             error("Hunspell dictionaries are missing! Please copy .dic and .aff" \
                   "files to src/virtualkeyboard/3rdparty/hunspell/data directory.")
@@ -269,11 +269,11 @@ pinyin {
         pinyindecoderservice.h
     DEFINES += HAVE_PINYIN
     INCLUDEPATH += 3rdparty/pinyin/include
+    DEPENDPATH += 3rdparty/pinyin/include
     LIBS += -L$$OUT_PWD/3rdparty/pinyin/$$SUBPATH -lpinyin
     pinyin_data.files = $$PWD/3rdparty/pinyin/data/dict_pinyin.dat
     pinyin_data.path = $$DATAPATH/pinyin
     INSTALLS += pinyin_data
-    !prefix_build: COPIES += pinyin_data
 }
 
 tcime {
@@ -285,6 +285,7 @@ tcime {
     cangjie: DEFINES += HAVE_TCIME_CANGJIE
     zhuyin: DEFINES += HAVE_TCIME_ZHUYIN
     INCLUDEPATH += 3rdparty/tcime
+    DEPENDPATH += 3rdparty/tcime
     LIBS += -L$$OUT_PWD/3rdparty/tcime/$$SUBPATH -ltcime
     tcime_data.files = \
         $$PWD/3rdparty/tcime/data/qt/dict_phrases.dat
@@ -294,7 +295,6 @@ tcime {
         $$PWD/3rdparty/tcime/data/qt/dict_zhuyin.dat
     tcime_data.path = $$DATAPATH/tcime
     INSTALLS += tcime_data
-    !prefix_build: COPIES += tcime_data
 }
 
 hangul {
@@ -312,6 +312,7 @@ openwnn {
     HEADERS += openwnninputmethod.h
     DEFINES += HAVE_OPENWNN
     INCLUDEPATH += 3rdparty/openwnn/wnnEngine/include
+    DEPENDPATH += 3rdparty/openwnn/wnnEngine/include
     # OpenWNN engine
     LIBS += -L$$OUT_PWD/3rdparty/openwnn/$$SUBPATH -lopenwnn
 }
@@ -334,10 +335,7 @@ lipi-toolkit {
     INCLUDEPATH += \
         3rdparty/lipi-toolkit/src/include \
         3rdparty/lipi-toolkit/src/util/lib
-    LIBS += -L$$OUT_PWD/../../lib \
-        -lshaperecommon$$qtPlatformTargetSuffix() \
-        -lltkcommon$$qtPlatformTargetSuffix() \
-        -lltkutil$$qtPlatformTargetSuffix()
+    LIBS += -L$$OUT_PWD/3rdparty/lipi-toolkit/src/lib/$$SUBPATH -lshaperecommon -lltkcommon -lltkutil
     win32: LIBS += Advapi32.lib
     else: LIBS += -ldl
     record-trace-input: DEFINES += QT_VIRTUALKEYBOARD_LIPI_RECORD_TRACE_INPUT

@@ -28,7 +28,7 @@ KeyboardStyle {
     readonly property bool compactSelectionList: [InputEngine.Pinyin, InputEngine.Cangjie, InputEngine.Zhuyin].indexOf(InputContext.inputEngine.inputMode) !== -1
     readonly property string fontFamily: "Courier"
     readonly property real keyBackgroundMargin: Math.round(9 * scaleHint)
-    readonly property real keyContentMargin: Math.round(30 * scaleHint)
+    readonly property real keyContentMargin: Math.round(50 * scaleHint)
     readonly property real keyIconScale: scaleHint * 0.6
     readonly property string resourcePath: "QtQuick/Enterprise/VirtualKeyboard/content/styles/retro/"
     readonly property string resourcePrefix: "qrc:/" + resourcePath
@@ -90,7 +90,7 @@ KeyboardStyle {
             id: keyText
             text: control.displayText
             color: "#110b05"
-            anchors.fill: parent
+            anchors.centerIn: parent
             anchors.margins: keyContentMargin
             fontSizeMode: Text.Fit
             horizontalAlignment: Text.AlignHCenter
@@ -162,7 +162,8 @@ KeyboardStyle {
             sourceSize.width: 159 * keyIconScale
             sourceSize.height: 88 * keyIconScale
             smooth: false
-            source: resourcePrefix + "images/backspace-c5a96f.svg"
+			scale: keyIconScale
+            source: resourcePrefix + "images/backspace-c5a96f.png"
         }
         states: [
             State {
@@ -276,11 +277,11 @@ KeyboardStyle {
                 case EnterKeyAction.Send:
                 case EnterKeyAction.Next:
                 case EnterKeyAction.Done:
-                    return resourcePrefix + "images/check-c5a96f.svg"
+                    return resourcePrefix + "images/check-c5a96f.png"
                 case EnterKeyAction.Search:
-                    return resourcePrefix + "images/search-c5a96f.svg"
+                    return resourcePrefix + "images/search-c5a96f.png"
                 default:
-                    return resourcePrefix + "images/enter-c5a96f.svg"
+                    return resourcePrefix + "images/enter-c5a96f.png"
                 }
             }
         }
@@ -361,7 +362,7 @@ KeyboardStyle {
             sourceSize.width: 144 * keyIconScale
             sourceSize.height: 127 * keyIconScale
             smooth: false
-            source: resourcePrefix + "images/hidekeyboard-c5a96f.svg"
+            source: resourcePrefix + "images/hidekeyboard-c5a96f.png"
         }
         states: [
             State {
@@ -414,7 +415,7 @@ KeyboardStyle {
                     }
                     PropertyChanges {
                         target: shiftKeyIcon
-                        source: resourcePrefix + "images/shift-cd8865.svg"
+                        source: resourcePrefix + "images/shift-cd8865.png"
                     }
                 },
                 State {
@@ -426,7 +427,7 @@ KeyboardStyle {
                     }
                     PropertyChanges {
                         target: shiftKeyIcon
-                        source: resourcePrefix + "images/shift-dc4f28.svg"
+                        source: resourcePrefix + "images/shift-dc4f28.png"
                     }
                 }
             ]
@@ -437,7 +438,7 @@ KeyboardStyle {
             sourceSize.width: 144 * keyIconScale
             sourceSize.height: 134 * keyIconScale
             smooth: false
-            source: resourcePrefix + "images/shift-c5a96f.svg"
+            source: resourcePrefix + "images/shift-c5a96f.png"
         }
         states: [
             State {
@@ -827,7 +828,7 @@ KeyboardStyle {
         }
     }
     selectionListBackground: Rectangle {
-        color: "#222222"
+        color: "#ECEEEE"
     }
     selectionListAdd: Transition {
         NumberAnimation { property: "y"; from: wordCandidateView.height; duration: 200 }
@@ -917,7 +918,7 @@ KeyboardStyle {
             if (!available)
                 return
             var ctx = getContext("2d")
-            ctx.lineWidth = parent.canvasType === "fullscreen" ? 10 : 10 * scaleHint
+            ctx.lineWidth = 10 * scaleHint
             ctx.lineCap = "round"
             ctx.strokeStyle = Qt.rgba(0, 0, 0)
             ctx.fillStyle = ctx.strokeStyle

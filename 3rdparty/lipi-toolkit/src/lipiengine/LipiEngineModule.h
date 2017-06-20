@@ -99,7 +99,6 @@ private:
 
 	
 	string m_strLipiRootPath; // LIPI_ROOT environment path 
-	string m_strLipiLibPath; // LIPI_LIB environment path
 
     string m_logFileName;
 
@@ -128,17 +127,9 @@ public:
 	*/
 	string getLipiRootPath() const;
 
-	/** @brief Returns LTKLipiEngineModule::m_strLipiLibPath
-	*/
-	string getLipiLibPath() const;
-
 	/** @brief Sets the data member LTKLipiEngineModule::m_strLipiRootPath
 	*/
 	void setLipiRootPath(const string& appLipiPath="");
-
-	/** @brief Sets the data member LTKLipiEngineModule::m_strLipiLibPath
-	*/
-	void setLipiLibPath(const string& appLipiLibPath="");
 
     /** @brief Returns LTKLipiEngineModule::m_logFileName 
 	*/

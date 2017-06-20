@@ -4,4 +4,4 @@ SUBDIRS += \
     common \
     boxfld
 
-boxfld.depends = common
+boxfld.depends = sub-common

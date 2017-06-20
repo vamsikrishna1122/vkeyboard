@@ -47,8 +47,8 @@ KeyboardLayout {
             text: "t"
         }
         Key {
-            key: Qt.Key_Z
-            text: "z"
+            key: Qt.Key_Y
+            text: "y"
         }
         Key {
             key: Qt.Key_U
@@ -74,7 +74,7 @@ KeyboardLayout {
     }
     KeyboardRow {
         FillerKey {
-            weight: 66
+            weight: 50
         }
         Key {
             key: Qt.Key_A
@@ -83,7 +83,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_S
             text: "s"
-            alternativeKeys: "sß"
         }
         Key {
             key: Qt.Key_D
@@ -122,15 +121,20 @@ KeyboardLayout {
             text: "ä"
         }
         EnterKey {
-            weight: 283
+            weight: 217//283
+            text: "Nächster"
+            uppercased: false
+        }
+        FillerKey {
+            weight: 50
         }
     }
     KeyboardRow {
-        keyWeight: 156
-        ShiftKey { }
+        keyWeight: 160
+        ShiftKey {}
         Key {
-            key: Qt.Key_Y
-            text: "y"
+            key: Qt.Key_Z
+            text: "z"
         }
         Key {
             key: Qt.Key_X
@@ -164,39 +168,28 @@ KeyboardLayout {
             key: Qt.Key_Period
             text: "."
         }
-        Key {
-            key: Qt.Key_Minus
-            text: "-"
-        }
         ShiftKey {
             weight: 264
         }
     }
     KeyboardRow {
-        keyWeight: 154
+        keyWeight: 120
         SymbolModeKey {
-            weight: 217
-        }
-        ChangeLanguageKey {
-            weight: 154
-        }
-        HandwritingModeKey {
-            weight: 154
+            weight: 180
         }
         SpaceKey {
-            weight: 864
+            weight:  1250
         }
         Key {
-            key: Qt.Key_Apostrophe
-            text: "'"
+            key: Qt.Key_hyphen
+            text: "-"
         }
         Key {
             key: 0xE000
-            text: ":-)"
-            alternativeKeys: [ ";-)", ":-)", ":-D", ":-(", "<3" ]
+            text: "_"
+
         }
         HideKeyboardKey {
-            weight: 204
         }
     }
 }

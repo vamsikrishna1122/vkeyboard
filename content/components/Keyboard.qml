@@ -75,6 +75,8 @@ Item {
     width: keyboardBackground.width
     height: wordCandidateView.height + keyboardBackground.height
     onActiveChanged: {
+        if (active && symbolMode && !preferNumbers)
+            symbolMode = false
         keyboardInputArea.reset()
     }
     onActiveKeyChanged: {
@@ -122,6 +124,10 @@ Item {
 
     Connections {
         target: InputContext
+        onInputItemChanged: {	
+            if (active && symbolMode && !preferNumbers)	
+                symbolMode = false	
+        }
         onFocusChanged: {
             if (InputContext.focus)
                 updateInputMethod()
@@ -394,6 +400,7 @@ Item {
     }
     CharacterPreviewBubble {
         id: characterPreview
+        visible: false
         objectName: "characterPreviewBubble"
         active: keyboardInputArea.pressed && !alternativeKeys.active
         property rect previewRect: Qt.rect(keyboard.x + characterPreview.x,

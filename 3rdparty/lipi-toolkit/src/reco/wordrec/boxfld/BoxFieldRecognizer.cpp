@@ -89,7 +89,6 @@ m_numTracesProcessed(0),
 m_boxedShapeProject(""),
 m_boxedShapeProfile(""),
 m_lipiRoot(""),
-m_lipiLib(""),
 m_boxedConfigFile(""),
 m_logFile(""),
 m_logLevel(LTKLogger::LTK_LOGLEVEL_ERR),
@@ -125,7 +124,6 @@ m_OSUtilPtr(LTKOSUtilFactory::getInstance())
 
     // initialize the data members
     m_lipiRoot          = tempControlInfo.lipiRoot;
-    m_lipiLib           = tempControlInfo.lipiLib;
     m_toolkitVersion    = tempControlInfo.toolkitVersion;
 
 
@@ -1184,7 +1182,7 @@ int BoxedFieldRecognizer::updateRecognitionResults(const vector<LTKShapeRecoResu
 	}
 
     m_hAlgoDLLHandle = NULL;
-    errorCode = m_OSUtilPtr->loadSharedLib(m_lipiLib, recognizerName, &m_hAlgoDLLHandle);
+    errorCode = m_OSUtilPtr->loadSharedLib(m_lipiRoot, recognizerName, &m_hAlgoDLLHandle);
 
 	// Unable to load dll
 	if(errorCode != SUCCESS)
@@ -1224,7 +1222,6 @@ int BoxedFieldRecognizer::updateRecognitionResults(const vector<LTKShapeRecoResu
     controlInfo.projectName     = strProjectName;
     controlInfo.profileName     = strLocalProfileName;
     controlInfo.lipiRoot        = m_lipiRoot;
-    controlInfo.lipiLib         = m_lipiLib;
     controlInfo.toolkitVersion  = m_toolkitVersion;
 
 	*outShapeRecPtr = NULL;

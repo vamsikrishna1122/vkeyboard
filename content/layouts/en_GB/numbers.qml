@@ -117,6 +117,10 @@ KeyboardLayout {
                     key: Qt.Key_9
                     text: "9"
                 }
+                Key {
+                    key: Qt.Key_0
+                    text: "0"
+                }
                 BackspaceKey {}
             }
             KeyboardRow {
@@ -134,11 +138,17 @@ KeyboardLayout {
                 }
                 Key {
                     text: " "
-                    displayText: "\u2423"
+                    displayText: "\u002d"
                     repeat: true
                     showPreview: false
                     key: Qt.Key_Space
                 }
+                Key {
+                    key: Qt.Key_Period
+                    text: "."
+                    alternativeKeys: ".,"
+                }
+
             }
             KeyboardRow {
                 Key {
@@ -153,22 +163,9 @@ KeyboardLayout {
                     key: Qt.Key_3
                     text: "3"
                 }
-                HideKeyboardKey {}
-            }
-            KeyboardRow {
-                ChangeLanguageKey {
-                    customLayoutsOnly: true
-                }
-                Key {
-                    key: Qt.Key_0
-                    text: "0"
-                }
-                Key {
-                    key: Qt.Key_Period
-                    text: "."
-                    alternativeKeys: ".,"
-                }
                 EnterKey {}
+
+                HideKeyboardKey {}
             }
         }
     }

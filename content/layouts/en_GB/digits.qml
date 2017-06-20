@@ -31,7 +31,8 @@ KeyboardLayout {
         Layout.fillWidth: false
         Layout.fillHeight: true
         Layout.alignment: Qt.AlignHCenter
-        Layout.preferredWidth: height
+        Layout.preferredWidth: height+150
+//        Layout.preferredHeight: height
         KeyboardRow {
             Key {
                 key: Qt.Key_7
@@ -61,11 +62,8 @@ KeyboardLayout {
                 text: "6"
             }
             Key {
-                text: " "
-                displayText: "\u2423"
-                repeat: true
-                showPreview: false
-                key: Qt.Key_Space
+                key: Qt.Key_Period
+                text: "."
             }
         }
         KeyboardRow {
@@ -81,21 +79,24 @@ KeyboardLayout {
                 key: Qt.Key_3
                 text: "3"
             }
-            HideKeyboardKey {}
+            Key {
+                key: Qt.Key_Minus
+                text: "-"
+            }
         }
         KeyboardRow {
-            ChangeLanguageKey {
-                customLayoutsOnly: true
-            }
+            keyWeight: 120
             Key {
                 key: Qt.Key_0
                 text: "0"
             }
             Key {
-                key: Qt.Key_Period
-                text: "."
+                key: Qt.Key_Return
+                text: "Next"
+                weight: 260
             }
-            EnterKey {}
+            HideKeyboardKey {}
+
         }
     }
 }

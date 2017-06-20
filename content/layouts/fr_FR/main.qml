@@ -27,18 +27,16 @@ KeyboardLayout {
     keyWeight: 160
     KeyboardRow {
         Key {
-            key: Qt.Key_A
-            text: "a"
-            alternativeKeys: "aàâæ"
+            key: Qt.Key_Q
+            text: "q"
         }
         Key {
-            key: Qt.Key_Z
-            text: "z"
+            key: Qt.Key_W
+            text: "w"
         }
         Key {
             key: Qt.Key_E
             text: "e"
-            alternativeKeys: "éèeêë"
         }
         Key {
             key: Qt.Key_R
@@ -51,22 +49,18 @@ KeyboardLayout {
         Key {
             key: Qt.Key_Y
             text: "y"
-            alternativeKeys: "yÿ"
         }
         Key {
             key: Qt.Key_U
             text: "u"
-            alternativeKeys: "ùuûü"
         }
         Key {
             key: Qt.Key_I
             text: "i"
-            alternativeKeys: "îiï"
         }
         Key {
             key: Qt.Key_O
             text: "o"
-            alternativeKeys: "ôoœ"
         }
         Key {
             key: Qt.Key_P
@@ -76,11 +70,11 @@ KeyboardLayout {
     }
     KeyboardRow {
         FillerKey {
-            weight: 56
+            weight: 50
         }
         Key {
-            key: Qt.Key_Q
-            text: "q"
+            key: Qt.Key_A
+            text: "a"
         }
         Key {
             key: Qt.Key_S
@@ -114,20 +108,21 @@ KeyboardLayout {
             key: Qt.Key_L
             text: "l"
         }
-        Key {
-            key: Qt.Key_M
-            text: "m"
-        }
         EnterKey {
-            weight: 283
+            weight: 217//283
+            text: "Prochain"
+            uppercased: false
+        }
+        FillerKey {
+            weight: 50
         }
     }
     KeyboardRow {
-        keyWeight: 156
+        keyWeight: 160
         ShiftKey {}
         Key {
-            key: Qt.Key_W
-            text: "w"
+            key: Qt.Key_Z
+            text: "z"
         }
         Key {
             key: Qt.Key_X
@@ -136,7 +131,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_C
             text: "c"
-            alternativeKeys: "cç"
         }
         Key {
             key: Qt.Key_V
@@ -151,6 +145,10 @@ KeyboardLayout {
             text: "n"
         }
         Key {
+            key: Qt.Key_M
+            text: "m"
+        }
+        Key {
             key: Qt.Key_Comma
             text: ","
         }
@@ -158,39 +156,28 @@ KeyboardLayout {
             key: Qt.Key_Period
             text: "."
         }
-        Key {
-            key: Qt.Key_Minus
-            text: "-"
-        }
         ShiftKey {
             weight: 264
         }
     }
     KeyboardRow {
-        keyWeight: 154
+        keyWeight: 120
         SymbolModeKey {
-            weight: 217
-        }
-        ChangeLanguageKey {
-            weight: 154
-        }
-        HandwritingModeKey {
-            weight: 154
+            weight: 180
         }
         SpaceKey {
-            weight: 864
+            weight:  1250
         }
         Key {
-            key: Qt.Key_Apostrophe
-            text: "'"
+            key: Qt.Key_hyphen
+            text: "-"
         }
         Key {
             key: 0xE000
-            text: ":-)"
-            alternativeKeys: [ ";-)", ":-)", ":-D", ":-(", "<3" ]
+            text: "_"
+
         }
         HideKeyboardKey {
-            weight: 204
         }
     }
 }

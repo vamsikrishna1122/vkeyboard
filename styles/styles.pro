@@ -4,7 +4,7 @@ TARGETPATH = QtQuick/Enterprise/VirtualKeyboard/Styles
 QT += qml quick svg
 CONFIG += plugin
 
-CONFIG += no_cxx_module
+CXX_MODULE = qml
 
 SOURCES += \
     svgimageprovider.cpp \
@@ -16,6 +16,12 @@ HEADERS += \
 
 OTHER_FILES += \
     *.qml
+
+other.files = \
+    plugins.qmltypes \
+    qmldir
+other.path = $$[QT_INSTALL_QML]/$$TARGETPATH
+INSTALLS += other
 
 RESOURCES += \
     styles.qrc

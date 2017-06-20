@@ -15,9 +15,12 @@ sourcedirs  += ..
 excludedirs += ../content/layouts \
     ../3rdparty
 
-exampledirs += ../../../examples/virtualkeyboard \
+# Specify the install path under QT_INSTALL_EXAMPLES
+# Examples will be installed under quick/enterprise/virtualkeyboard -
+# 'enterprise/virtualkeyboard' subdirectory is given as part of \example commands
+exampledirs += ../../../examples/quick \
     snippets
-examplesinstallpath = virtualkeyboard
+examplesinstallpath = quick
 imagedirs += images
 
 depends += qtcore qtgui qtquick

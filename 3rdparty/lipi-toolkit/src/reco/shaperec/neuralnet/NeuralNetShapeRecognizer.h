@@ -123,13 +123,6 @@ class NeuralNetShapeRecognizer: public LTKShapeRecognizer
          *     </p>
          */
 
-        string m_lipiLibPath;
-        /**< @brief Path of the Lipi Libraries
-         *     <p>
-         *     DEFAULT: LipiEngine::getLipiPath()
-         *     </p>
-         */
-
         LTKShapeFeatureExtractor *m_ptrFeatureExtractor;
         /**< @brief Pointer to LTKShapeFeatureExtractor class
          *     <p>

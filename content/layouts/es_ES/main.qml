@@ -37,7 +37,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_E
             text: "e"
-            alternativeKeys: "ēęėëeêèé"
         }
         Key {
             key: Qt.Key_R
@@ -54,35 +53,28 @@ KeyboardLayout {
         Key {
             key: Qt.Key_U
             text: "u"
-            alternativeKeys: "üûuùú"
         }
         Key {
             key: Qt.Key_I
             text: "i"
-            alternativeKeys: "ïįîiìí"
         }
         Key {
             key: Qt.Key_O
             text: "o"
-            alternativeKeys: "öõôoòóº"
         }
         Key {
             key: Qt.Key_P
             text: "p"
         }
-        BackspaceKey {
-            weight: 180
-        }
+        BackspaceKey {}
     }
     KeyboardRow {
-        keyWeight: 156
         FillerKey {
-            weight: 56
+            weight: 50
         }
         Key {
             key: Qt.Key_A
             text: "a"
-            alternativeKeys: "äãaâàáª"
         }
         Key {
             key: Qt.Key_S
@@ -121,11 +113,16 @@ KeyboardLayout {
             text: "ñ"
         }
         EnterKey {
-            weight: 246
+            weight: 217//283
+            text: "Siguiente"
+            uppercased: false
+        }
+        FillerKey {
+            weight: 50
         }
     }
     KeyboardRow {
-        keyWeight: 156
+        keyWeight: 160
         ShiftKey {}
         Key {
             key: Qt.Key_Z
@@ -138,7 +135,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_C
             text: "c"
-            alternativeKeys: "čcçć"
         }
         Key {
             key: Qt.Key_V
@@ -164,40 +160,28 @@ KeyboardLayout {
             key: Qt.Key_Period
             text: "."
         }
-        Key {
-            key: Qt.Key_Minus
-            text: "-"
-        }
         ShiftKey {
             weight: 264
         }
     }
     KeyboardRow {
-        keyWeight: 154
+        keyWeight: 120
         SymbolModeKey {
-            weight: 217
-        }
-        ChangeLanguageKey {
-            weight: 154
-        }
-        HandwritingModeKey {
-            weight: 154
+            weight: 180
         }
         SpaceKey {
-            weight: 864
+            weight:  1250
         }
         Key {
-            key: Qt.Key_Question
-            text: "?"
-            alternativeKeys: "¿?¡!"
+            key: Qt.Key_hyphen
+            text: "-"
         }
         Key {
             key: 0xE000
-            text: ":-)"
-            alternativeKeys: [ ";-)", ":-)", ":-D", ":-(", "<3" ]
+            text: "_"
+
         }
         HideKeyboardKey {
-            weight: 204
         }
     }
 }

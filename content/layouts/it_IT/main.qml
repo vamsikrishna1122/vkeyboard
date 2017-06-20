@@ -37,7 +37,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_E
             text: "e"
-            alternativeKeys: "eèé"
         }
         Key {
             key: Qt.Key_R
@@ -54,17 +53,14 @@ KeyboardLayout {
         Key {
             key: Qt.Key_U
             text: "u"
-            alternativeKeys: "uùú"
         }
         Key {
             key: Qt.Key_I
             text: "i"
-            alternativeKeys: "iìí"
         }
         Key {
             key: Qt.Key_O
             text: "o"
-            alternativeKeys: "oòó"
         }
         Key {
             key: Qt.Key_P
@@ -74,12 +70,11 @@ KeyboardLayout {
     }
     KeyboardRow {
         FillerKey {
-            weight: 56
+            weight: 50
         }
         Key {
             key: Qt.Key_A
             text: "a"
-            alternativeKeys: "aàá"
         }
         Key {
             key: Qt.Key_S
@@ -114,11 +109,16 @@ KeyboardLayout {
             text: "l"
         }
         EnterKey {
-            weight: 283
+            weight: 217//283
+            text: "Il prossimo"
+            uppercased: false
+        }
+        FillerKey {
+            weight: 50
         }
     }
     KeyboardRow {
-        keyWeight: 156
+        keyWeight: 160
         ShiftKey {}
         Key {
             key: Qt.Key_Z
@@ -157,34 +157,27 @@ KeyboardLayout {
             text: "."
         }
         ShiftKey {
-            weight: 204
+            weight: 264
         }
     }
     KeyboardRow {
-        keyWeight: 154
+        keyWeight: 120
         SymbolModeKey {
-            weight: 217
-        }
-        ChangeLanguageKey {
-            weight: 154
-        }
-        HandwritingModeKey {
-            weight: 154
+            weight: 180
         }
         SpaceKey {
-            weight: 864
+            weight:  1250
         }
         Key {
-            key: Qt.Key_Apostrophe
-            text: "'"
+            key: Qt.Key_hyphen
+            text: "-"
         }
         Key {
             key: 0xE000
-            text: ":-)"
-            alternativeKeys: [ ";-)", ":-)", ":-D", ":-(", "<3" ]
+            text: "_"
+
         }
         HideKeyboardKey {
-            weight: 204
         }
     }
 }

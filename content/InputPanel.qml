@@ -38,6 +38,8 @@ import QtQuick.Enterprise.VirtualKeyboard 2.0
 Item {
     id: inputPanel
 
+    property bool keyboardAlign: true
+
     /*! \qmlproperty bool Active state of the input panel
         \since QtQuick.Enterprise.VirtualKeyboard 2.0
 
@@ -55,7 +57,12 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
+        anchors.bottomMargin: -20
     }
+    onKeyboardAlignChanged: {
+        keyboard.style.inputCheck = keyboardAlign
+    }
+
     MouseArea {
         z: -1
         anchors.fill: keyboard

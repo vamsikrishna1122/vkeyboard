@@ -1,21 +1,18 @@
 /******************************************************************************
 **
-** Copyright (C) 2015 The Qt Company Ltd.
-** Contact: http://www.qt.io/licensing/
+** Copyright (C) 2015 The Qt Company Ltd
+** All rights reserved.
+** For any questions to The Qt Company, please use contact form at http://qt.io
 **
 ** This file is part of the Qt Virtual Keyboard module.
 **
-** $QT_BEGIN_LICENSE:COMM$
+** Licensees holding valid commercial license for Qt may use this file in
+** accordance with the Qt License Agreement provided with the Software
+** or, alternatively, in accordance with the terms contained in a written
+** agreement between you and The Qt Company.
 **
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and The Qt Company. For licensing terms
-** and conditions see http://www.qt.io/terms-conditions. For further
-** information use the contact form at http://www.qt.io/contact-us.
-**
-** $QT_END_LICENSE$
+** If you have questions regarding the use of this file, please use
+** contact form at http://qt.io
 **
 ******************************************************************************/
 
@@ -24,6 +21,7 @@ import QtQuick.Enterprise.VirtualKeyboard 2.0
 
 KeyboardLayout {
     inputMode: InputEngine.Latin
+
     keyWeight: 160
     KeyboardRow {
         Key {
@@ -37,37 +35,30 @@ KeyboardLayout {
         Key {
             key: Qt.Key_E
             text: "e"
-            alternativeKeys: "êeëèé"
         }
         Key {
             key: Qt.Key_R
             text: "r"
-            alternativeKeys: "ŕrř"
         }
         Key {
             key: Qt.Key_T
             text: "t"
-            alternativeKeys: "ţtŧť"
         }
         Key {
             key: Qt.Key_Y
             text: "y"
-            alternativeKeys: "ÿyýŷ"
         }
         Key {
             key: Qt.Key_U
             text: "u"
-            alternativeKeys: "űūũûüuùú"
         }
         Key {
             key: Qt.Key_I
             text: "i"
-            alternativeKeys: "îïīĩiìí"
         }
         Key {
             key: Qt.Key_O
             text: "o"
-            alternativeKeys: "œøõôöòóo"
         }
         Key {
             key: Qt.Key_P
@@ -77,22 +68,19 @@ KeyboardLayout {
     }
     KeyboardRow {
         FillerKey {
-            weight: 56
+            weight: 50
         }
         Key {
             key: Qt.Key_A
             text: "a"
-            alternativeKeys: "aäåãâàá"
         }
         Key {
             key: Qt.Key_S
             text: "s"
-            alternativeKeys: "šsşś"
         }
         Key {
             key: Qt.Key_D
             text: "d"
-            alternativeKeys: "dđď"
         }
         Key {
             key: Qt.Key_F
@@ -101,7 +89,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_G
             text: "g"
-            alternativeKeys: "ġgģĝğ"
         }
         Key {
             key: Qt.Key_H
@@ -118,19 +105,24 @@ KeyboardLayout {
         Key {
             key: Qt.Key_L
             text: "l"
-            alternativeKeys: "ĺŀłļľl"
         }
         EnterKey {
-            weight: 283
+            weight: 217//283
+            text: "Next"
+            uppercased: false
+        }
+        FillerKey {
+            weight: 50
         }
     }
+
+
     KeyboardRow {
-        keyWeight: 156
+        keyWeight: 160
         ShiftKey {}
         Key {
             key: Qt.Key_Z
             text: "z"
-            alternativeKeys: "zžż"
         }
         Key {
             key: Qt.Key_X
@@ -139,7 +131,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_C
             text: "c"
-            alternativeKeys: "çcċčć"
         }
         Key {
             key: Qt.Key_V
@@ -152,7 +143,6 @@ KeyboardLayout {
         Key {
             key: Qt.Key_N
             text: "n"
-            alternativeKeys: "ņńnň"
         }
         Key {
             key: Qt.Key_M
@@ -167,34 +157,27 @@ KeyboardLayout {
             text: "."
         }
         ShiftKey {
-            weight: 204
+            weight: 264
         }
     }
     KeyboardRow {
-        keyWeight: 154
+        keyWeight: 120
         SymbolModeKey {
-            weight: 217
-        }
-        ChangeLanguageKey {
-            weight: 154
-        }
-        HandwritingModeKey {
-            weight: 154
+            weight: 180
         }
         SpaceKey {
-            weight: 864
+            weight:  1250
         }
         Key {
-            key: Qt.Key_Apostrophe
-            text: "'"
+            key: Qt.Key_hyphen
+            text: "-"
         }
         Key {
             key: 0xE000
-            text: ":-)"
-            alternativeKeys: [ ";-)", ":-)", ":-D", ":-(", "<3" ]
+            text: "_"
+
         }
         HideKeyboardKey {
-            weight: 204
         }
     }
 }

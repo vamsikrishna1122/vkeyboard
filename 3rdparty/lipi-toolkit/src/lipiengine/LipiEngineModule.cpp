@@ -126,10 +126,6 @@ int LTKLipiEngineModule::initializeLipiEngine()
 	{
 		LTKReturnError(ELIPI_ROOT_PATH_NOT_SET);	// PATH not set
 	}
-	if(m_strLipiLibPath == "")
-	{
-		m_strLipiLibPath = m_strLipiRootPath + SEPARATOR + "lib";
-	}
 
 	temp = m_strLipiRootPath + SEPARATOR + "projects" + SEPARATOR +
 		   LIPIENGINE_CFG_STRING;
@@ -277,7 +273,6 @@ int LTKLipiEngineModule::createShapeRecognizer(const string& strProjName,
     
     LTKControlInfo controlInfo;
     controlInfo.lipiRoot = m_strLipiRootPath;
-    controlInfo.lipiLib = m_strLipiLibPath;
     controlInfo.projectName = strProjectName;
     controlInfo.profileName = strProfileName;
     controlInfo.toolkitVersion = currentVersion;
@@ -428,7 +423,6 @@ int LTKLipiEngineModule::createWordRecognizer(const string& strProjName,
     LTKControlInfo controlInfo;
 
     controlInfo.lipiRoot        = m_strLipiRootPath;
-    controlInfo.lipiLib         = m_strLipiLibPath;
     controlInfo.projectName     = strProjectName;
     controlInfo.profileName     = strProfileName;
     controlInfo.toolkitVersion  = currentVersion;
@@ -628,28 +622,6 @@ string LTKLipiEngineModule::getLipiRootPath() const
 }
 
 /******************************************************************************
-* AUTHOR        :
-* DATE          :
-* NAME          : getLipiLibPath
-* DESCRIPTION   : To fetch the value for the environment variable LIPI_LIB
-* ARGUMENTS     : None
-* RETURNS       : environment string on success & NULL on error
-* NOTES         :
-* CHANGE HISTROY
-* Author            Date                Description of change
-******************************************************************************/
-string LTKLipiEngineModule::getLipiLibPath() const
-{
-	LOG(LTKLogger::LTK_LOGLEVEL_INFO)<<
-		"Entering: LTKLipiEngineModule::getLipiLibPath()"<<endl;
-
-	LOG(LTKLogger::LTK_LOGLEVEL_INFO)<<
-		"Exiting: LTKLipiEngineModule::getLipiLibPath()"<<endl;
-
-	return m_strLipiLibPath;
-}
-
-/******************************************************************************
 * AUTHOR			: Nidhi Sharma 
 * DATE				: 10-JAN-2007
 * NAME				: setLipiRootPath
@@ -672,32 +644,6 @@ void LTKLipiEngineModule::setLipiRootPath(const string& appLipiPath)
 	else
 	{
 		m_strLipiRootPath = appLipiPath;
-	}
-}
-
-/******************************************************************************
-* AUTHOR			:
-* DATE				:
-* NAME				: setLipiLibPath
-* DESCRIPTION		: To set the value of LIPI_LIB
-* ARGUMENTS			: String
-* RETURNS			:
-* NOTES 			:
-* CHANGE HISTROY
-* Author            Date                Description of change
-******************************************************************************/
-void LTKLipiEngineModule::setLipiLibPath(const string& appLipiLibPath)
-{
-
-	//Dont LOG messages as this may be called before configureLogger()
-
-	if ( appLipiLibPath.empty())
-	{
-		m_strLipiLibPath = m_OSUtilPtr->getEnvVariable(LIPILIB_ENV_STRING);
-	}
-	else
-	{
-		m_strLipiLibPath = appLipiLibPath;
 	}
 }
 
@@ -1160,7 +1106,7 @@ int LTKLipiEngineModule::loadRecognizerDLL(const string& recognizerName,
 	string recognizerDLLPath = "";
 	int returnVal = SUCCESS;
 
-    returnVal = m_OSUtilPtr->loadSharedLib(m_strLipiLibPath, recognizerName, dllHandler);
+    returnVal = m_OSUtilPtr->loadSharedLib(m_strLipiRootPath, recognizerName, dllHandler);
 
     
 	if(returnVal != SUCCESS)
@@ -1364,7 +1310,7 @@ int LTKLipiEngineModule::configureLogger()
 		}
 	}
 
-    LTKLoggerUtil::createLogger(m_strLipiLibPath);
+    LTKLoggerUtil::createLogger(m_strLipiRootPath);
     LTKLoggerUtil::configureLogger(m_logFileName, m_logLevel);
     
 	return SUCCESS;

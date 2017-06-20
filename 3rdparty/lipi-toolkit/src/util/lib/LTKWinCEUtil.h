@@ -74,7 +74,7 @@ public:
 	~LTKWinCEUtil();
 
 	// @}
-    int loadSharedLib(const string& lipiLibPath,
+    int loadSharedLib(const string& lipiRoot,
                          const string& sharedLibName,
                          void** libHandle);
 
