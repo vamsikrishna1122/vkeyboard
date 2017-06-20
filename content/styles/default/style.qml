@@ -121,7 +121,7 @@ KeyboardStyle {
 //                sourceSize.height: 88 * keyIconScale
                 smooth: false
 //				scale: scaleHint*2
-                source: resourcePrefix + "images/backspace-868482.png"
+//                source: resourcePrefix + "images/backspace-868482.png"
             }
         }
         states: [

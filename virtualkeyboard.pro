@@ -7,7 +7,8 @@ include(doc/doc.pri)
 
 QT += qml quick gui gui-private core-private
 
-CONFIG += plugin lang-zh_CN
+CONFIG += plugin
+#lang-zh_CN
 win32 {
     CONFIG += no-pkg-config skip_target_version_ext
     VERSION = $$QT_VERSION
